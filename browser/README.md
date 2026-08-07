@@ -4,13 +4,23 @@
 
 ## 使用方式
 
-建议在仓库根目录启动一个静态 HTTP 服务后访问：
+Windows 下可直接双击仓库根目录的 `启动阅读器.vbs`。它会隐藏启动本地服务，并自动打开：
 
-```powershell
-python -m http.server 8080
+```text
+http://127.0.0.1:8080/browser/
 ```
 
-然后打开 `http://localhost:8080/browser/`。
+不再阅读时，可双击仓库根目录的 `关闭阅读器服务.vbs`。
+
+这个双击启动方式不依赖 Python 或 Node.js，只需要 Windows 自带的 PowerShell。
+
+如果需要手动启动，也可以运行：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\browser\reader-launcher.ps1
+```
+
+然后打开 `http://127.0.0.1:8080/browser/`。
 
 ## 本地正文
 
