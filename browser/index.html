@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kaibunsho Reader</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="library-panel">
+        <header class="brand">
+          <div>
+            <p class="eyebrow">Kaibunsho</p>
+            <h1>Markdown 阅读器</h1>
+          </div>
+          <button class="icon-button" id="themeToggle" type="button" aria-label="切换深浅主题">
+            <span id="themeIcon" aria-hidden="true">◐</span>
+          </button>
+        </header>
+
+        <section class="source-card">
+          <div>
+            <p class="section-label">文章来源</p>
+            <p class="source-status" id="sourceStatus">正在读取索引...</p>
+          </div>
+          <div class="source-actions">
+            <button class="secondary-button" id="refreshButton" type="button">刷新索引</button>
+            <button class="secondary-button" id="folderButton" type="button">选择正文文件夹</button>
+          </div>
+        </section>
+
+        <label class="search-box">
+          <span>搜索</span>
+          <input id="searchInput" type="search" placeholder="输入标题或路径" autocomplete="off" />
+        </label>
+
+        <nav class="article-list" id="articleList" aria-label="文章列表"></nav>
+      </aside>
+
+      <main class="reader-panel">
+        <article class="reader-card">
+          <header class="reader-header">
+            <p class="reader-kicker" id="articleSource">等待选择文章</p>
+            <h2 id="articleTitle">欢迎使用 Markdown 阅读器</h2>
+            <p class="reader-meta" id="articleMeta">
+              可读取仓库根目录的文章索引，也可在配置 GitHub 仓库链接后从远程拉取正文。
+            </p>
+          </header>
+          <div class="reader-content" id="articleContent">
+            <div class="empty-state">
+              <p>请先放置根目录 <code>文章索引.md</code>，或点击左侧按钮选择仓库内的 <code>正文</code> 文件夹。</p>
+              <p>GitHub 远程源可在 <code>browser/config.js</code> 中配置，当前默认留空。</p>
+            </div>
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <script src="./config.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
